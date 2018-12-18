@@ -91,7 +91,8 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopPeriodic() {
     double voltage = sensor.getVoltage();
-    System.out.println(voltage);
+    //System.out.println(voltage);
+    SmartDashboard.putNumber("Voltage", voltage);
   }
 
   /**
