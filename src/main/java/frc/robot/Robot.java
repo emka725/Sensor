@@ -10,7 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.AnalogInput;
+
+import frc.robot.sensors.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,7 +26,7 @@ public class Robot extends IterativeRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private static AnalogInput sensor = new AnalogInput(0);
+  private static WhiteTapeSensor white_tape_sensor = new WhiteTapeSensor(9);
 
   /**
    * This function is run when the robot is first started up and should be
@@ -90,7 +91,7 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void teleopPeriodic() {
-    SmartDashboard.putNumber("Voltage",sensor.getVoltage());
+    SmartDashboard.putBoolean("White Tape Sensor",white_tape_sensor.get());
   }
 
   /**
