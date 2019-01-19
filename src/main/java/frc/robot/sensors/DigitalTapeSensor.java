@@ -4,8 +4,8 @@ package frc.robot.sensors;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 
-public class WhiteTapeSensor extends DigitalInput {
-    public WhiteTapeSensor(int channel) {
+public class DigitalTapeSensor extends DigitalInput {
+    public DigitalTapeSensor(int channel) {
         super(channel);
     }
 }

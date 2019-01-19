@@ -7,11 +7,11 @@
 
 package frc.robot;
 
+import frc.robot.sensors.*;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import frc.robot.sensors.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,8 +25,6 @@ public class Robot extends IterativeRobot {
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
-
-  private static WhiteTapeSensor white_tape_sensor = new WhiteTapeSensor(9);
 
   /**
    * This function is run when the robot is first started up and should be
@@ -91,7 +89,7 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void teleopPeriodic() {
-    SmartDashboard.putBoolean("White Tape Sensor",white_tape_sensor.get());
+    ////
   }
 
   /**
@@ -99,5 +97,10 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void testPeriodic() {
+    SmartDashboard.putNumber("Raw Value", RobotMap.tape_sensor.getValue());
+    SmartDashboard.putNumber("Voltage", RobotMap.tape_sensor.getVoltage());
+    SmartDashboard.putNumber("Average Raw Value", RobotMap.tape_sensor.getAverageValue());
+    SmartDashboard.putNumber("Average Voltage", RobotMap.tape_sensor.getAverageVoltage());
+    SmartDashboard.putBoolean("Detected", RobotMap.tape_sensor.isTapeDetected());
   }
 }
