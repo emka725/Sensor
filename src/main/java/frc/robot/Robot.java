@@ -7,8 +7,6 @@
 
 package frc.robot;
 
-import frc.robot.sensors.*;
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -47,6 +45,7 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void robotPeriodic() {
+    ////
   }
 
   /**
@@ -97,10 +96,9 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void testPeriodic() {
-    SmartDashboard.putNumber("Raw Value", RobotMap.tape_sensor.getValue());
-    SmartDashboard.putNumber("Voltage", RobotMap.tape_sensor.getVoltage());
-    SmartDashboard.putNumber("Average Raw Value", RobotMap.tape_sensor.getAverageValue());
-    SmartDashboard.putNumber("Average Voltage", RobotMap.tape_sensor.getAverageVoltage());
-    SmartDashboard.putBoolean("Detected", RobotMap.tape_sensor.isTapeDetected());
+    SmartDashboard.putNumber("Raw Value", RobotMap.analog_tape_sensor.getValue());
+    SmartDashboard.putNumber("Voltage", RobotMap.analog_tape_sensor.getVoltage());
+    SmartDashboard.putNumber("Average Raw Value", RobotMap.analog_tape_sensor.getAverageValue());
+    SmartDashboard.putNumber("Average Voltage", RobotMap.analog_tape_sensor.getAverageVoltage());
   }
 }

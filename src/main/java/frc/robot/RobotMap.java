@@ -25,17 +25,17 @@ public class RobotMap {
 
 	/**
 	 * Declaring pins
-     * TODO: Update pin mapping
 	 */
 	private static final int LEFT_VICTOR_1 = 1;
 	private static final int LEFT_VICTOR_2 = 2;
 	private static final int LEFT_VICTOR_3 = 3;
 	private static final int RIGHT_VICTOR_1 = 12;
-	private static final int RIGHT_VICTOR_2 = 11;//Victor SPX
-	private static final int RIGHT_VICTOR_3 = 10;
+	private static final int RIGHT_VICTOR_2 = 13;
+	private static final int RIGHT_VICTOR_3 = 14;
     
-    private static final int DISTANCE_SENSOR = 2708;
-    private static final int TAPE_SENSOR = 2708;
+    private static final int DISTANCE_SENSOR = 0;
+	private static final int ANALOG_TAPE_SENSOR = 1;
+	private static final int DIGITAL_TAPE_SENSOR = 9;
 
 	/**
 	 * Creating motor controller objects
@@ -51,13 +51,14 @@ public class RobotMap {
 	 * Creating Sensor objects
 	 */	
 	public static final DistanceSensor distance_sensor = new DistanceSensor(DISTANCE_SENSOR);
-	public static final AnalogTapeSensor tape_sensor = new AnalogTapeSensor(TAPE_SENSOR);
+	public static final AnalogTapeSensor analog_tape_sensor = new AnalogTapeSensor(ANALOG_TAPE_SENSOR);
+	public static final DigitalTapeSensor digital_tape_sensor = new DigitalTapeSensor(DIGITAL_TAPE_SENSOR);
 	
 	public static void init() {
 		left_drive_victor_2.follow(left_drive_victor_1);
 		left_drive_victor_3.follow(left_drive_victor_1);
 		right_drive_victor_2.follow(right_drive_victor_1);
-		right_drive_victor_3.follow(right_drive_victor_1);	
+		right_drive_victor_3.follow(right_drive_victor_1);
         /*
 		left_drive_talon_1.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute,PID_MODE,0);
         right_drive_talon_1.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute,PID_MODE,0);

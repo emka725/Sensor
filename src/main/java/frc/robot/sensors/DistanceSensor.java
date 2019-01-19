@@ -4,6 +4,16 @@ package frc.robot.sensors;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 
+/**
+ * WIRE MAPPING
+ * Yellow: Analog Signal
+ * Red: 5 V
+ * Black: Ground
+ * 
+ * Green: PWM Signal (Channel 3 in the manual)
+ * White: PWM Signal (Channel 4 in the manual)
+ */
+
 public class DistanceSensor extends AnalogInput {
     public DistanceSensor(int channel) {
         super(channel);
