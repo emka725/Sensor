@@ -1,4 +1,5 @@
 //  OPB732WZ Reflective Optical Sensor
+//  This thing will switch from LOW to HIGH at 1.3 V. 
 
 package frc.robot.sensors;
 

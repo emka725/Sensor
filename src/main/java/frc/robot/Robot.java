@@ -96,9 +96,12 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void testPeriodic() {
+    SmartDashboard.putBoolean("Detected", RobotMap.digital_tape_sensor.get());
+    /*
     SmartDashboard.putNumber("Raw Value", RobotMap.analog_tape_sensor.getValue());
     SmartDashboard.putNumber("Voltage", RobotMap.analog_tape_sensor.getVoltage());
     SmartDashboard.putNumber("Average Raw Value", RobotMap.analog_tape_sensor.getAverageValue());
     SmartDashboard.putNumber("Average Voltage", RobotMap.analog_tape_sensor.getAverageVoltage());
+    */
   }
 }
