@@ -7,7 +7,12 @@
 
 package frc.robot;
 
+import frc.robot.OI;
+import frc.robot.subsystems.Drivetrain;
+import frc.robot.commands.DriveCommand;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -24,6 +29,9 @@ public class Robot extends IterativeRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
+  public static final Drivetrain drivetrain = new Drivetrain();
+  public static OI oi;
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -33,6 +41,9 @@ public class Robot extends IterativeRobot {
     m_chooser.addDefault("Default Auto", kDefaultAuto);
     m_chooser.addObject("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
+    oi = new OI();
+    oi.init();
+    RobotMap.init();
   }
 
   /**
@@ -88,7 +99,7 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void teleopPeriodic() {
-    ////
+    Scheduler.getInstance().run();
   }
 
   /**
@@ -96,12 +107,6 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void testPeriodic() {
-    SmartDashboard.putBoolean("Detected", RobotMap.digital_tape_sensor.get());
-    /*
-    SmartDashboard.putNumber("Raw Value", RobotMap.analog_tape_sensor.getValue());
-    SmartDashboard.putNumber("Voltage", RobotMap.analog_tape_sensor.getVoltage());
-    SmartDashboard.putNumber("Average Raw Value", RobotMap.analog_tape_sensor.getAverageValue());
-    SmartDashboard.putNumber("Average Voltage", RobotMap.analog_tape_sensor.getAverageVoltage());
-    */
+    Scheduler.getInstance().run();
   }
 }

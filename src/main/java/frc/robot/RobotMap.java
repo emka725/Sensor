@@ -1,8 +1,7 @@
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Victor;
 import frc.robot.sensors.*;
-
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -27,11 +26,11 @@ public class RobotMap {
 	 * Declaring pins
 	 */
 	private static final int LEFT_VICTOR_1 = 1;
-	private static final int LEFT_VICTOR_2 = 2;
-	private static final int LEFT_VICTOR_3 = 3;
-	private static final int RIGHT_VICTOR_1 = 12;
-	private static final int RIGHT_VICTOR_2 = 13;
-	private static final int RIGHT_VICTOR_3 = 14;
+	// private static final int LEFT_VICTOR_2 = 13;
+	// private static final int LEFT_VICTOR_3 = 14;
+	private static final int RIGHT_VICTOR_1 = 0;
+	// private static final int RIGHT_VICTOR_2 = 2;
+	// private static final int RIGHT_VICTOR_3 = 3;
     
     private static final int DISTANCE_SENSOR = 0;
 	private static final int ANALOG_TAPE_SENSOR = 1;
@@ -40,12 +39,12 @@ public class RobotMap {
 	/**
 	 * Creating motor controller objects
 	 */
-	public static VictorSPX left_drive_victor_1 = new VictorSPX(LEFT_VICTOR_1);
-	public static VictorSPX left_drive_victor_2 = new VictorSPX(LEFT_VICTOR_2);
-	public static VictorSPX left_drive_victor_3 = new VictorSPX(LEFT_VICTOR_3);
-	public static VictorSPX right_drive_victor_1 = new VictorSPX(RIGHT_VICTOR_1);
-	public static VictorSPX right_drive_victor_2 = new VictorSPX(RIGHT_VICTOR_2);
-	public static VictorSPX right_drive_victor_3 = new VictorSPX(RIGHT_VICTOR_3);
+	public static Victor left_drive_victor_1 = new Victor(LEFT_VICTOR_1);
+	// public static VictorSPX left_drive_victor_2 = new VictorSPX(LEFT_VICTOR_2);
+	// public static VictorSPX left_drive_victor_3 = new VictorSPX(LEFT_VICTOR_3);
+	public static Victor right_drive_victor_1 = new Victor(RIGHT_VICTOR_1);
+	// public static VictorSPX right_drive_victor_2 = new VictorSPX(RIGHT_VICTOR_2);
+	// public static VictorSPX right_drive_victor_3 = new VictorSPX(RIGHT_VICTOR_3);
 	
 	/**
 	 * Creating Sensor objects
@@ -55,10 +54,10 @@ public class RobotMap {
 	public static final DigitalTapeSensor digital_tape_sensor = new DigitalTapeSensor(DIGITAL_TAPE_SENSOR);
 	
 	public static void init() {
-		left_drive_victor_2.follow(left_drive_victor_1);
-		left_drive_victor_3.follow(left_drive_victor_1);
-		right_drive_victor_2.follow(right_drive_victor_1);
-		right_drive_victor_3.follow(right_drive_victor_1);
+		// left_drive_victor_2.follow(left_drive_victor_1);
+		// left_drive_victor_3.follow(left_drive_victor_1);
+		// right_drive_victor_2.follow(right_drive_victor_1);
+		// right_drive_victor_3.follow(right_drive_victor_1);
         /*
 		left_drive_talon_1.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute,PID_MODE,0);
         right_drive_talon_1.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute,PID_MODE,0);
